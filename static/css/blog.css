@@ -1,12 +1,18 @@
 .page-header {
-	background-color: #ff9400;
+	background-color: #1CC1ED;
 	margin-top: 0;
 	padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-	color: #ffffff;
+	color: #1CC1ED;
 	font-size: 36pt;
+	text-decoration: none;
+}
+
+.user-info a{
+	color: #AC23D0;
+	font-size: 20;
 	text-decoration: none;
 }
 
@@ -20,7 +26,7 @@ h1, h2, h3, h4 {
 
 .date {
 	float: right;
-	color: #828282;
+	color: #C7C7C7;
 }
 
 .save {
@@ -32,7 +38,14 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-	color: #ffffff;
+	color: #1CC1ED;
+	float: right;
+	font-size: 26pt;
+	margin-right: 20px;
+}
+
+.top-info, .top-info:hover, .top-menu:info {
+	color: #C2C2C2;
 	float: right;
 	font-size: 26pt;
 	margin-right: 20px;
@@ -40,8 +53,9 @@ h1, h2, h3, h4 {
 
 .post {
 	margin-bottom: 70px;
+	text-align: justify;
 }
 
 .post h1 a, .post h1 a:visited {
-	color: #000000;
+	color: #000ACD;
 }

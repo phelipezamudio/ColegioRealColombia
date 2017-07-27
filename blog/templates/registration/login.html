@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	{% if form.errors %}
+		<p>El usuario y/o contraseña no coinciden. Inténtalo nuevamente</p>
+	{% endif %}
+
+	<center>
+		<div class="row">
+			<center>
+				<div class="col-xs-6 col-sm-4">
+					<form method="post" class="form" action="{% url 'login' %}">
+						{% csrf_token %}
+						<table>
+							<tr>
+								<td>Usuario: </td>
+								<td>{{ form.username }}</td>
+							</tr>
+							<tr>
+								<td>Contraseña:</td>
+								<td>{{ form.password }}</td>
+							</tr>
+						</table>
+
+						<input type="submit" name="login" />
+						<input type="hidden" name="next" value="{{ next }}" />
+					</form>
+				</div>
+			</center>
+		</div>
+	</center>
+{% endblock %}

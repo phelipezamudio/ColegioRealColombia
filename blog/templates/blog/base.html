@@ -15,16 +15,24 @@
 		<!-- google font-->
 		<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		<link rel="stylesheet" href="{% static 'css/crcapp.css' %}">
 	</head>
 	
 	<body>
 		<div class = "page-header">
-			<a href="{% url 'blog.views.post_new' %}" class="top-menu"><samp class="glyphicon glyphicon-plus"></samp></a>
-			<h1><a href="/">Colegio Real de Colombia App</a></h1>
+			<h1><a href="/">Colegio Real de Colombia</a></h1>
 		</div>
 
-		<div class = "content container">
+		<div class = "content container-fluid">
+			{% if user.is_authenticated %}
+				<a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+				<p class="top-menu">{{ user.username }} <small><a href="{% url 'logout' %}">Cerrar sesión</a></small></p>
+			{% else %}
+				<a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+			{% endif %}
+		</div>
+
+		<div class = "content container-fluid">
 			<div class = "row">
 				<div class = "col-md-8">
 					{% block content %}
